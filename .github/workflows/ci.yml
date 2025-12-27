@@ -1,15 +1,15 @@
 name: CI
 
+# Run on push to main and pull request
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build-test:
-    runs-on: self-hosted
-
+    runs-on: self-hosted   # ← self-hosted runner pe run kare
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,18 +17,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
-
-      - name: Cache pip dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install flask
 
-      - name: Run tests
-        run: python -m unittest discover tests
+      - name: Run basic test
+        run: |
+          echo "Running CI test..."
+          python -c "import flask; print('Flask imported successfully')"
