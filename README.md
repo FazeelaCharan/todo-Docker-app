@@ -1,14 +1,38 @@
-# Dockerized Flask To-Do App
+# Dockerized Flask To-Do Application with CI/CD & Kubernetes
 
+## 📌 Project Overview
 
+This project demonstrates a complete DevOps workflow using a simple Flask-based To-Do application.
+The application is containerized using Docker, integrated with GitHub Actions for CI, and deployed on a Kubernetes cluster using Docker Desktop.
 
-## Description
+The goal of this project is to showcase practical understanding of:
 
-A minimal To-Do list application built with Python Flask and Docker.  
+- Containerization
+- CI/CD pipelines
+- Self-hosted GitHub Actions runner
+- Kubernetes application deployment and operations
 
-Includes a simple browser UI to add tasks, view tasks, and mark tasks as done.
+---
 
+## 🛠️ Technologies Used
 
+- Python (Flask)
+- Docker & Docker Desktop
+- GitHub Actions (CI/CD)
+- Self-hosted GitHub Actions Runner
+- Kubernetes (Docker Desktop cluster)
+- kubectl
+
+---
+
+## 🚀 Application Features
+
+- Simple web-based UI
+- Add and view To-Do items
+- Lightweight Flask backend
+- Runs in Docker and Kubernetes environments
+
+---
 
 ## Step 1: Docker Installation on Linux
 
@@ -32,8 +56,8 @@ docker --version
 
 sudo systemctl status docker
 ```
-## Step 2: Build Docker Image
 
+## Step 2: Build Docker Image
 
 docker build -t todo-docker-ui .
 
@@ -47,15 +71,37 @@ Open your browser: http://localhost:5000
 
 Add tasks, mark done, and view completed tasks
 
-
 ## Step 5: Logs & Verification
 
 Docker version: docker --version
 
 Docker service status: sudo systemctl status docker
 
-Container logs: docker logs todo-ui-container 
+Container logs: docker logs todo-ui-container
 
-## Browser View
+## 🚀 CI/CD with Github Actions
+
+- CI pipeline runs on every push and pull request to main
+
+Steps include:
+
+- Code checkout
+
+- Dependency installation
+
+- Application build/test
+
+- A self-hosted runner was configured and successfully executed workflows
+
+---
+# Kubernetes Deployment
+
+The same Docker image is deployed on a local Kubernetes cluster.
+All Kubernetes manifests are located in:
+- k8s/
+Detailed Kubernetes steps are documented in:
+- k8s/README.md
+
+# Browser View
 
 ![To-Do App UI](images/flask_Todo_app.png)
