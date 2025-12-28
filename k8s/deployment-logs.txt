@@ -1,0 +1,28 @@
+NAME                              READY   STATUS    RESTARTS   AGE     IP          NODE             NOMINATED NODE   READINESS GATES
+flask-demo-app-7df66d8bc9-f5hbj   1/1     Running   0          2m53s   10.1.0.10   docker-desktop   <none>           <none>
+flask-demo-app-7df66d8bc9-nxklp   1/1     Running   0          14m     10.1.0.8    docker-desktop   <none>           <none>
+flask-demo-app-7df66d8bc9-p5xbt   1/1     Running   0          14m     10.1.0.6    docker-desktop   <none>           <none>
+flask-demo-app-7df66d8bc9-rh6k7   1/1     Running   0          14m     10.1.0.7    docker-desktop   <none>           <none>
+flask-demo-app-7df66d8bc9-zlbph   1/1     Running   0          2m53s   10.1.0.9    docker-desktop   <none>           <none>
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+flask-service   NodePort    10.96.68.195   <none>        80:30007/TCP   15m   app=flask-demo
+kubernetes      ClusterIP   10.96.0.1      <none>        443/TCP        49m   <none>
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                  SELECTOR
+flask-demo-app   5/5     5            5           16m   flask-demo   todo-docker-ui:latest   app=flask-demo
+NAME                              READY   STATUS    RESTARTS   AGE
+flask-demo-app-7df66d8bc9-f5hbj   1/1     Running   0          3h22m
+flask-demo-app-7df66d8bc9-nxklp   1/1     Running   0          3h34m
+flask-demo-app-7df66d8bc9-p5xbt   1/1     Running   0          3h34m
+flask-demo-app-7df66d8bc9-rh6k7   1/1     Running   0          3h34m
+flask-demo-app-7df66d8bc9-zlbph   1/1     Running   0          3h22m
+Waiting for deployment "flask-demo-app" rollout to finish: 1 out of 3 new replicas have been updated...
+deployment.apps/flask-demo-app 
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
+deployment.apps/flask-demo-app 
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
